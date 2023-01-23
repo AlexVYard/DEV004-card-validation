@@ -22,64 +22,64 @@ function changeToPassword() {
 }
 */
 
-    let input = document.querySelector(".input");
-    let button = document.querySelector(".button");
-        button.disabled = true;
-        input.addEventListener("keyup", stateHandle);
+const input = document.querySelector(".input");
+const button = document.querySelector(".button");
+button.disabled = true;
+input.addEventListener("keyup", stateHandle);
      
-    function stateHandle() {
-      if(document.querySelector(".input").value === "") {
-        button.disabled = true;
-          } else {
-        button.disabled = false;
-      } 
-    }
+function stateHandle() {
+  if(document.querySelector(".input").value === "") {
+    button.disabled = true;
+  } else {
+    button.disabled = false;
+  } 
+}
     
-    let numeroEnmascarado = ""
-    let numeroEnmascaradostring = ""
-    let numeroTarjeta = 0
-    let numeroTarjetaString = ""
+let numeroEnmascarado = ""
+let numeroEnmascaradostring = ""
+let numeroTarjeta = 0
+let numeroTarjetaString = ""
 
-    document.querySelector(".input").addEventListener("keyup", numeroaString);
+document.querySelector(".input").addEventListener("keyup", numeroaString);
     
-    function numeroaString() {
-      numeroEnmascarado = document.getElementById("cardnumber").value.replace(/^[a-z]+$/g, "") 
-      numeroEnmascarado = validator.maskify(numeroEnmascarado) 
-      console.log("La variable numeroEnmascarado es: "+numeroEnmascarado) 
-      numeroEnmascaradostring = numeroEnmascarado.toString().split('') 
-      console.log("El array en numeroEnmascaradoString es: "+numeroEnmascaradostring) 
-      numeroTarjetaString = numeroTarjeta.toString().split('') 
-      console.log("El array en numeroTarjetaString es: "+numeroTarjetaString) 
-      for (let i = 0 ; i <= numeroEnmascaradostring.length ; i++) {
-        if ( numeroEnmascaradostring[i] >= 0 ) {
-          numeroTarjetaString[i] = numeroEnmascaradostring[i]
-        }
-      }
-      console.log("El nuevo array en numeroTarjetaString es: "+numeroTarjetaString)
-      numeroTarjetaString = numeroTarjetaString.join("")
-      numeroTarjeta = parseFloat(numeroTarjetaString)
-      console.log("El numero ingresado es: "+numeroTarjeta)
-      document.getElementById("cardnumber").value = numeroEnmascarado 
+function numeroaString() {
+  numeroEnmascarado = document.getElementById("cardnumber").value.replace(/^[a-z]+$/g, "") 
+  numeroEnmascarado = validator.maskify(numeroEnmascarado) 
+  console.log("La variable numeroEnmascarado es: "+numeroEnmascarado) 
+  numeroEnmascaradostring = numeroEnmascarado.toString().split('') 
+  console.log("El array en numeroEnmascaradoString es: "+numeroEnmascaradostring) 
+  numeroTarjetaString = numeroTarjeta.toString().split('') 
+  console.log("El array en numeroTarjetaString es: "+numeroTarjetaString) 
+  for (let i = 0 ; i <= numeroEnmascaradostring.length ; i++) {
+    if ( numeroEnmascaradostring[i] >= 0 ) {
+      numeroTarjetaString[i] = numeroEnmascaradostring[i]
     }
+  }
+  console.log("El nuevo array en numeroTarjetaString es: "+numeroTarjetaString)
+  numeroTarjetaString = numeroTarjetaString.join("")
+  numeroTarjeta = parseFloat(numeroTarjetaString)
+  console.log("El numero ingresado es: "+numeroTarjeta)
+  document.getElementById("cardnumber").value = numeroEnmascarado 
+}
 
-    document.getElementById("boton").addEventListener("click", validate)
+document.getElementById("boton").addEventListener("click", validate)
 
 let boleean = true
 
-    function validate() {
+function validate() {
 
-     boleean = validator.isvalid(numeroTarjeta)
-     console.log("El boleean input es: "+boleean)
+  boleean = validator.isValid(numeroTarjeta)
+  console.log("El boleean input es: "+boleean)
 
-      if (boleean == true) {
-        alert("El numero ingresado es valido")
-            } else {
-        alert("El numero ingresado es invalido")
-      }
+  if (boleean === true) {
+    alert("El numero ingresado es valido")
+  } else {
+    alert("El numero ingresado es invalido")
+  }
 
-    }
+}
 
-    /*let numeroIngresado = ""
+/*  let numeroIngresado = ""
 
     function numeroaString() {
       
@@ -89,7 +89,8 @@ let boleean = true
       document.getElementById("cardnumber").value = numeroIngresado
     }
     */
-    /*
+/*
+
     let lastChar = ""
     let numeroOriginal = ""
     console.log("El valor de lastChar es="+lastChar)
@@ -115,8 +116,10 @@ let boleean = true
       console.log("El nuevo numero modificado es ="+numeroModificado)
       
     }
-    */
-  /*REFERENCIA
+
+*/
+
+/* REFERENCIA
     for (let i = 0 ; i <= numeroRevertido.length ; i++) {
     if ((i + 1) % 2 == 0) {
       numeroRevertido[i] = numeroRevertido[i] * 2
@@ -124,13 +127,15 @@ let boleean = true
         numeroRevertido[i] = numeroRevertido[i] - 9
       } 
     }  
-  }*/
+  }
+*/
 
-      /*
+/*
       let password = document.getElementById("cardnumber").value
       setTimeout(changePassword => {
         let passwordCambiado = (
         console.log(passwordCambiado)            
-      }, 500);*/
+      }, 500);
+*/
 
       
