@@ -22,7 +22,6 @@ function changeToPassword() {
 }
 */
 
-
     let input = document.querySelector(".input");
     let button = document.querySelector(".button");
         button.disabled = true;
@@ -41,15 +40,14 @@ function changeToPassword() {
     let numeroTarjeta = 0
     let numeroTarjetaString = ""
 
-    document.querySelector(".input").addEventListener("input", numeroaString);
+    document.querySelector(".input").addEventListener("keyup", numeroaString);
     
     function numeroaString() {
       numeroEnmascarado = document.getElementById("cardnumber").value.replace(/^[a-z]+$/g, "") 
       numeroEnmascarado = validator.maskify(numeroEnmascarado) 
       console.log("La variable numeroEnmascarado es: "+numeroEnmascarado) 
       numeroEnmascaradostring = numeroEnmascarado.toString().split('') 
-      
-      console.log("La variable numeroTarjeta+9 es: "+numeroTarjeta) 
+      console.log("El array en numeroEnmascaradoString es: "+numeroEnmascaradostring) 
       numeroTarjetaString = numeroTarjeta.toString().split('') 
       console.log("El array en numeroTarjetaString es: "+numeroTarjetaString) 
       for (let i = 0 ; i <= numeroEnmascaradostring.length ; i++) {
@@ -61,7 +59,24 @@ function changeToPassword() {
       numeroTarjetaString = numeroTarjetaString.join("")
       numeroTarjeta = parseFloat(numeroTarjetaString)
       console.log("El numero ingresado es: "+numeroTarjeta)
-      document.getElementById("cardnumber").value = numeroTarjeta 
+      document.getElementById("cardnumber").value = numeroEnmascarado 
+    }
+
+    document.getElementById("boton").addEventListener("click", validate)
+
+let boleean = true
+
+    function validate() {
+
+     boleean = validator.isvalid(numeroTarjeta)
+     console.log("El boleean input es: "+boleean)
+
+      if (boleean == true) {
+        alert("El numero ingresado es valido")
+            } else {
+        alert("El numero ingresado es invalido")
+      }
+
     }
 
     /*let numeroIngresado = ""
@@ -118,46 +133,4 @@ function changeToPassword() {
         console.log(passwordCambiado)            
       }, 500);*/
 
-    // Algoritmo de Luhn
-  // Dividimos el numero para trabajar con los digitos que necesitamos
-  document.getElementById("boton").addEventListener("click", validate);
-  function validate() {
-          numeroTarjeta = document.getElementById("cardnumber").value;
-      let numeroString = numeroTarjeta.toString();
-      let numeroRevertido = numeroString.split('').reverse();
-
-          console.log(numeroRevertido)
-
-  // Loop para operar los numeros pares
-      for (let i = 0 ; i <= numeroRevertido.length ; i++) {
-        if ((i + 1) % 2 == 0) {
-          numeroRevertido[i] = numeroRevertido[i] * 2
-          if (numeroRevertido[i] > 9) {
-            numeroRevertido[i] = numeroRevertido[i] - 9
-          } 
-        }  
-      }
-
-  // Pasamos todos los numeros de string a float (incluso los que ya estaba en float)
-      numeroRevertido = numeroRevertido.map(parseFloat)
-      console.log(numeroRevertido)
       
-  // Sumamos los numeros
-      let numeroSumado = 0;
-      for (let i = 0 ; i < numeroRevertido.length ; i++) {
-        numeroSumado += numeroRevertido[i];
-      }
-      console.log(numeroSumado)
-
-  // Verificacion que los numeros sean mutiplo de 10
-      if (numeroSumado % 10 == 0) {
-        alert("El numero ingresado es valido");
-            } else {
-        alert("El numero ingresado es invalido");
-      }
-   
-    }
-
-  
-  
-  
