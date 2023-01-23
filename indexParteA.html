@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+</head>
+
+<body>
+<!-- Configuracion del boton -->
+  <input class="input" placeholder="Numero de Tarjeta" id="cardnumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+  type = "number" maxlength = "16"></input>
+  <button class="button" onclick="validate()">Validar</button>
+  <div id="result"></div>
+  
+  <script lang="javascript">
+
+    let input = document.querySelector(".input");
+    let button = document.querySelector(".button");
+    button.disabled = true;
+    input.addEventListener("keyup", stateHandle);
+
+    function stateHandle() {
+      if(document.querySelector(".input").value === "") {
+        button.disabled = true;
+          } else {
+        button.disabled = false;
+      }  
+    }
+
+// Algoritmo de Luhn
+  // Dividimos el numero para trabajar con los digitos que necesitamos
+    function validate() {
+      let numeroTarjeta = parseInt(document.getElementById("cardnumber").value);
+      let numeroString = numeroTarjeta.toString();
+      let numeroRevertido = numeroString.split('').reverse();
+
+          console.log(numeroRevertido)
+
+  // Loop para operar los numeros pares
+      for (let i = 0 ; i <= numeroRevertido.length ; i++) {
+        if ((i + 1) % 2 == 0) {
+          numeroRevertido[i] = numeroRevertido[i] * 2
+          if (numeroRevertido[i] > 9) {
+            numeroRevertido[i] = numeroRevertido[i] - 9
+          } 
+        }  
+      }
+
+  // Pasamos todos los numeros de string a float (incluso los que ya estaba en float)
+      numeroRevertido = numeroRevertido.map(parseFloat)
+      console.log(numeroRevertido)
+      
+/* Intento de string a float
+      for (let i = 0 ; i <= numeroRevertido.length ; i++) {
+        numeroRevertido[i] = parsefloat(numeroRevertido[i])
+      }
+*/
+
+  // Sumamos los numeros
+      let numeroSumado = 0;
+      for (let i = 0 ; i < numeroRevertido.length ; i++) {
+        numeroSumado += numeroRevertido[i];
+      }
+
+      console.log(numeroSumado)
+
+/* Intento de sumar los numeros
+    let numeroSumado = 0
+    numeroSumado = numeroRevertido.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,0);
+
+console.log(numeroSumado)
+*/
+   
+/* Intento de pasar el array de string a float
+      numeroRevertido = numeroRevertido.join('')
+      numeroRevertido = parseFloat(numeroRevertido)
+      
+      console.log(numeroRevertido)
+
+  //Intento de suma de los numeros
+      let sum = 0;
+      while (numeroRevertido) {
+          sum += numeroRevertido % 10;
+          numeroRevertido = Math.floor(numeroRevertido / 10);
+    }
+*/
+
+/*  Algoritmos de Luhn antiguo
+      let numeroSumado = numeroRevertido
+
+      let numero1 = parseFloat(numeroRevertido.charAt(0));
+      let numero3 = parseFloat(numeroRevertido.charAt(2));
+      let numero5 = parseFloat(numeroRevertido.charAt(4));
+      let numero7 = parseFloat(numeroRevertido.charAt(6));
+      let numero9 = parseFloat(numeroRevertido.charAt(8));
+      let numero11 = parseFloat(numeroRevertido.charAt(10));
+      let numero13 = parseFloat(numeroRevertido.charAt(12));
+      let numero15 = parseFloat(numeroRevertido.charAt(14));
+
+      let numero2 = parseFloat(numeroRevertido.charAt(1) * 2)
+      let numero4 = parseFloat(numeroRevertido.charAt(3) * 2)
+      let numero6 = parseFloat(numeroRevertido.charAt(5) * 2)
+      let numero8 = parseFloat(numeroRevertido.charAt(7) * 2)
+      let numero10 = parseFloat(numeroRevertido.charAt(9) * 2)
+      let numero12 = parseFloat(numeroRevertido.charAt(11) * 2)
+      let numero14 = parseFloat(numeroRevertido.charAt(13) * 2)
+      let numero16 = parseFloat(numeroRevertido.charAt(15) * 2)
+
+      if (numero2 > 9) {
+        numero2 = numero2 - 9
+      }
+      if (numero4 > 9) {
+        numero4 = numero4 - 9
+      }
+      if (numero6 > 9) {
+        numero6 = numero6 - 9
+      }
+      if (numero8 > 9) {
+        numero8 = numero8 - 9
+      }
+      if (numero10 > 9) {
+        numero10 = numero10 - 9
+      }
+      if (numero12 > 9) {
+        numero12 = numero12 - 9
+      }
+      if (numero14 > 9) {
+        numero14 = numero14 - 9
+      }
+      if (numero16 > 9) {
+        numero16 = numero16 - 9
+      }
+
+      let numeroSumado = numero1 + numero2 + numero3 + numero4 + numero5 + numero6 + numero7 + numero8 + numero9 + numero10 + numero11 + numero12 + numero13 + numero14 + numero15
+
+      console.log(numeroSumado % 10)
+*/
+
+  // Verificacion que los numeros sean mutiplo de 10
+      if (numeroSumado % 10 == 0) {
+        alert("El numero ingresado es valido");
+            } else {
+        alert("El numero ingresado es invalido");
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

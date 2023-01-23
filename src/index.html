@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <!-- Configuracion del boton -->
+      <input class="input" placeholder="Numero de Tarjeta" id="cardnumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+       type="text" maxlength = "16"></input>
+      <button id="boton" class="button">Validar</button>
+      <div id="result"></div>
+      
+
     <header></header>
     <main></main>
     <footer></footer>
