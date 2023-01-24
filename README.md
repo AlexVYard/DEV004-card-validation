@@ -5,8 +5,7 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Herramientas usadas](#2-resumen-del-proyecto)
 * [3. Funcionalidad de la Interfaz](#3-consideraciones-generales)
-* [4. Hito: Criterios de aceptación mínimos del proyecto](#4-hito-criterios-de-aceptación-mínimos-del-proyecto)
-* [5. Recursos](#5-hito-opcional-mostrar-la-franquicia-de-tarjeta)
+* [4. Recursos](#5-hito-opcional-mostrar-la-franquicia-de-tarjeta)
 
 ***
 
@@ -32,20 +31,6 @@ Web basica para verificar el numero de una tarjeta utilizando un campo de texto 
 * El boton valida el numero de tarjeta usando el algoritmo de Luhn lanzando una alerta indicando si es valida o no
 * No se permite intentar validar si es que no hay ningun numero ingresado 
   
-## 4. Hito Opcional: Mostrar la franquicia de tarjeta
-
-Las partes opcionales tienen como intención permitirte profundizar un poco más
-sobre los objetivos de aprendizaje del proyecto. Todo en la vida tiene pros y
-contras, decide sabiamente si quieres invertir el tiempo en profundizar/
-perfeccionar o aprender cosas nuevas en el siguiente proyecto.
-
-En este hito 2 puedes, además de validar si el número de la
-tarjeta es válida, mostrar la [franquicia](https://es.wikipedia.org/wiki/N%C3%BAmero_de_tarjeta_bancaria)
-de la tarjeta (ej: Visa, MasterCard, etc)
-usando estas [reglas de validación](https://stevemorse.org/ssn/cc.html).
-Si escribes un nuevo método para eso, debes hacer las respectivas pruebas unitarias.
-
-
 ### Descripción de scripts / archivos
 
 * `README.md`: Explicacion del producto.
@@ -56,7 +41,7 @@ Si escribes un nuevo método para eso, debes hacer las respectivas pruebas unita
 * `test/validator.spec.js`: Tests que se uso para verficar el codigo.
 
 
-## 5. Recursos
+## 4. Recursos
 
 ### Software Usado
 
