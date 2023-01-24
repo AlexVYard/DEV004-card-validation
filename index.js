@@ -57,10 +57,32 @@ function numeroaString() {
   }
   console.log("El nuevo array en numeroTarjetaString es: "+numeroTarjetaString)
   numeroTarjetaString = numeroTarjetaString.join("")
+  console.log("El array unido en numeroTarjetaString es: "+numeroTarjetaString)
+/*  Intento de hito opcional
+  let chequarJCB = numeroTarjetaString.startsWith("1800") || numeroTarjetaString.startsWith("2131")
+  if (chequarJCB == true) {
+    document.getElementById("idJCB").removeAttribute("hidden")
+  } else {
+    document.getElementById("idJCB").setAttribute("hidden","hidden")
+  }
+  let chequarEnRoute = numeroTarjetaString.startsWith("2014") || numeroTarjetaString.startsWith("2149")
+  if (chequarEnRoute == true) {
+    document.getElementById("idJCB").removeAttribute("hidden")
+  } else {
+    document.getElementById("idJCB").setAttribute("hidden","hidden")
+  }
+  let chequarCarteBlanche = numeroTarjetaString.startsWith("2014") || numeroTarjetaString.startsWith("2149")
+  if (chequarCarteBlanche == true) {
+    document.getElementById("idJCB").removeAttribute("hidden")
+  } else {
+    document.getElementById("idJCB").setAttribute("hidden","hidden")
+  }
+*/  
   numeroTarjeta = parseFloat(numeroTarjetaString)
   console.log("El numero ingresado es: "+numeroTarjeta)
-  document.getElementById("cardnumber").value = numeroEnmascarado 
+  document.getElementById("cardnumber").value = numeroEnmascarado
 }
+
 
 document.getElementById("boton").addEventListener("click", validate)
 
@@ -137,5 +159,3 @@ function validate() {
         console.log(passwordCambiado)            
       }, 500);
 */
-
-      
