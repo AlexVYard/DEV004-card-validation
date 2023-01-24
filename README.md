@@ -50,7 +50,7 @@ Web basica para verificar el numero de una tarjeta utilizando un campo de texto 
 3. [Git bash](https://git-scm.com/download/win)
 
 
-### Recursos usados
+### Referencias
 
 * [String a float](https://dirask.com/posts/JavaScript-convert-string-array-to-float-array-DWkWBD)
 * [Funcionalidad de for](https://www.youtube.com/watch?v=11Fz65LQVB4)
