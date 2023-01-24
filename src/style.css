@@ -1,14 +1,31 @@
-
-/*
-#cardnumber{
-    -webkit-text-security: disc;
-      -moz-text-security:circle;
-    -text-security:circle;
-  }
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-  }  
+.interface {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -125px; 
   
-  */
+
+}
+
+.input { 
+	background: #ececec; 
+  padding: 10px;
+}
+
+	
+.button { 
+	background: #9fd3c7; 
+  padding: 10px;
+
+}
+
+
+.third-color { 
+	background: #385170; 
+}
+
+
+.body { 
+	background: #142d4c;
+  
+}
