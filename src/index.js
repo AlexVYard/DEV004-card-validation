@@ -58,7 +58,7 @@ function numeroaString() {
   console.log("El nuevo array en numeroTarjetaString es: "+numeroTarjetaString)
   numeroTarjetaString = numeroTarjetaString.join("")
   console.log("El array unido en numeroTarjetaString es: "+numeroTarjetaString)
-/*  Intento de hito opcional
+  /*  Intento de hito opcional
   let chequarJCB = numeroTarjetaString.startsWith("1800") || numeroTarjetaString.startsWith("2131")
   if (chequarJCB == true) {
     document.getElementById("idJCB").removeAttribute("hidden")
@@ -77,7 +77,7 @@ function numeroaString() {
   } else {
     document.getElementById("idJCB").setAttribute("hidden","hidden")
   }
-*/  
+  */  
   numeroTarjeta = parseFloat(numeroTarjetaString)
   console.log("El numero ingresado es: "+numeroTarjeta)
   document.getElementById("cardnumber").value = numeroEnmascarado
