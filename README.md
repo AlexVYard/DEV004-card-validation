@@ -31,7 +31,7 @@ Web basica para verificar el numero de una tarjeta utilizando un campo de texto 
 * El boton valida el numero de tarjeta usando el algoritmo de Luhn lanzando una alerta indicando si es valida o no
 * No se permite intentar validar si es que no hay ningun numero ingresado 
   
-### Descripción de scripts / archivos
+**2. Descripción de scripts / archivos**
 
 * `README.md`: Explicacion del producto.
 * `src/index.html`: Punto de entrada a tu aplicación.
